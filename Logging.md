@@ -6,7 +6,7 @@ This document explains **why logging is critical in microservices**, how it is i
 These notes are written with **backend interview expectations (SDE-1 / SDE-2)** in mind.
 
 ---
-
+SLF4J = Simple Logging Facade for Java
 ## 1. Why Logging is Important in Microservices
 
 **Simple definition**  
