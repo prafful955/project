@@ -42,7 +42,7 @@ Without logging:
 ---
 
 ## 3. Logging Architecture in Spring Boot
-
+```
 Application Code
 ↓
 SLF4J (Logging API)
@@ -50,7 +50,7 @@ SLF4J (Logging API)
 Logback (Implementation)
 ↓
 Console + Log Files
-
+```
 
 Key points:
 - SLF4J is only an abstraction
@@ -108,9 +108,10 @@ The `logback-spring.xml` file:
 - Controls log rotation and retention
 
 Example log output:
+```
 2026-02-06 10:12:45 INFO [http-nio-8081-exec-1] RequestLoggingFilter - [REQ] GET /employees
 2026-02-06 10:12:45 INFO [http-nio-8081-exec-1] RequestLoggingFilter - [RES] 200 in 32ms
-
+```
 
 ---
 
