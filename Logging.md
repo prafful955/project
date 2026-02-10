@@ -207,15 +207,48 @@ public class RequestLoggingFilter extends OncePerRequestFilter {
 ```
 
 Response logging
-
 HTTP status
-
 Total execution time
-
 This helps detect:
-
 Slow APIs
-
 Error responses
-
 Performance regressions
+```
+What is Correlation ID? (Simple Language)
+Correlation ID = unique ID for ONE request
+Generated when request enters system
+Same ID travels across:
+API Gateway
+Employee Service
+Department Service
+Printed in every log line
+2.Microservices = distributed systems
+    Logs are scattered across services
+    Correlation ID is foundational for tracing
+    Interview GOLD line:
+    “Correlation ID helps trace a single request across multiple microservices using logs.”
+```
+```
+Client Request
+   ↓
+API Gateway
+   → generate Correlation ID (if not present)
+   → add header: X-Correlation-Id
+   ↓
+Employee Service
+   → read header
+   → put into logging context
+   ↓
+Department Service
+   → same ID
+   ↓
+All logs include same Correlation ID
+
+```
+MDC (Mapped Diagnostic Context)
+
+SLF4J provides MDC.
+
+Think of MDC as:
+
+Thread-local map attached to logs
